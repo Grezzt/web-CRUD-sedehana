@@ -69,19 +69,18 @@ if (mysqli_num_rows($hasil) > 0) {
   <div class="container">
     <div class="input-box">
       <i class="uil uil-search"></i>
-      <input type="text" placeholder="Search here..." />
-      <button class="button">Search</button>
-
+      <input type="text" id="searchInput" placeholder="Search here..." />
+      <button id="searchButton" class="button" >Search</button>
     </div>
 
   <table id="data-table" class="table">
-   <thead class="table-header">
-    <tr>
-    <th>id</th>
-    <th>Nama</th>
-    <th>quantity</th>
-    <th>Harga</th>
-  </tr>
+   <thead class="">
+   <tr>
+      <th class="table-header">id</th>
+      <th class="alphabet-header">Nama</th>
+      <th class="table-header">quantity</th>
+      <th class="table-header">Harga</th>
+    </tr>
   </thead>
     <tbody id="info-table-body" class="table-content">
       <?php
@@ -101,6 +100,7 @@ if (mysqli_num_rows($hasil) > 0) {
       } else {
         foreach ($data as $item) {
           echo '<tr>';
+          echo '<td>' . $item['id'] . '</td>';
           echo '<td>' . $item['name'] . '</td>';
           echo '<td>' . $item['quantity'] . '</td>';
           echo '<td>Rp.' . $item['price'] . '</td>';
