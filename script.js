@@ -1,4 +1,4 @@
-// sorting table
+
 !function() {
     function t(t, e) {
         for (; (t = t.parentElement) && !t.classList.contains(e););
@@ -26,8 +26,11 @@
         for (var i = document.getElementsByClassName("table"), o = [], s = 0; s < i.length; s++) ! function() {
             i[s].setAttribute("data-sort-index", s);
             for (var d = i[s].getElementsByTagName("tbody")[0].getElementsByTagName("tr"), l = 0; l < d.length; l++)
-                for (var g = d[l].getElementsByTagName("td"), c = 0; c < g.length; c++) void 0 === o[s] && o.splice(s, 0, []), void 0 === o[s][l] && o[s].splice(l, 0, []), o[s][l].splice(c, 0, g[c].innerHTML);
-            for (var u = i[s].getElementsByTagName("thead")[0].getElementsByTagName("tr")[0].getElementsByTagName("th"), m = 0; m < u.length; m++) ! function() {
+                for (var g = d[l].getElementsByTagName("td"), c = 0; c < g.length; c++)
+                    void 0 === o[s] && o.splice(s, 0, []), void 0 === o[s][l] && o[s].splice(l, 0, []), o[s][l].splice(c, 0, g[c].innerHTML);
+
+            for (var u = i[s].getElementsByTagName("thead")[0].getElementsByTagName("tr")[0].getElementsByTagName("th"), m = 0; m < u.length; m++)
+                ! function() {
                 var s = u[m].classList.contains("table-header");
                 u[m].setAttribute("data-sort-direction", 0), u[m].setAttribute("data-sort-index", m), u[m].addEventListener("click", function() {
                     var d = this.getAttribute("data-sort-direction"),
@@ -43,11 +46,9 @@
         }()
     })
 }();
-
 // search bar
 document.addEventListener("DOMContentLoaded", function () {
     var searchInput = document.getElementById("searchInput");
-    var searchButton = document.getElementById("searchButton");
     var tableBody = document.getElementById("info-table-body");
     var rows = tableBody.getElementsByTagName("tr");
 
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    searchButton.addEventListener("click", filterTable);
+    // searchButton.addEventListener("click", filterTable);
     searchInput.addEventListener("keyup", filterTable); // real-time search
 });
 
