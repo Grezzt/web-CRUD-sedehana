@@ -1,5 +1,11 @@
 <?php
 include 'koneksi.php';
+session_start();
+if (!isset($_SESSION['name'])) {
+    header("Location: login.php");
+    exit();
+}
+
 $ambil = "SELECT * FROM inventaris";
 $hasil = mysqli_query($koneksi, $ambil);
 
@@ -34,14 +40,16 @@ if (mysqli_num_rows($hasil) > 0) {
   <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <a href="#home" class="navbar-logo">Himatika.<span>Ristek</span></a>
+  <a href="#home"><img src="asset/images.png" alt=""></a>
+    <a href="#home" class="navbar-logo">Skill Test.<span>Ristek</span></a>
     <!-- tengah -->
     <div class="navbar-nav">
     </div>
     <!-- kanan -->
     <div class="navbar-extra">
-      <!-- <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a> -->
-      <a href="login.php">Logout</a>
+    <form method="POST" action="logout.php">
+       <button type="submit">Logout</button>
+    </form>
     </div>
   </nav>
   <!-- navbar end -->

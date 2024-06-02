@@ -15,22 +15,19 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 
-  <!-- bootstrap -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
-
   <!-- style -->
   <link rel="stylesheet" href="style.css" />
   </head>
   <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <a href="#home" class="navbar-logo">Himatika.<span>Ristek</span></a>
+    <a href="index.php"><img src="asset/images.png" alt=""></a>
+    <a href="index.php" class="navbar-logo">Skill Test.<span>Ristek</span></a>
     <!-- tengah -->
     <div class="navbar-nav">
     </div>
     <!-- kanan -->
     <div class="navbar-extra">
-      <!-- <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a> -->
       <a href="login.html">Login</a>
     </div>
   </nav>
@@ -41,6 +38,7 @@
      <div class="card-container">
      <div class="left">
         <div class="left-container">
+          <img src="asset/LogoRistek.jpg" alt="">
           <h2>Login Form</h2>
           <p>Login Sebagai Admin.</p><br>
         </div>

@@ -51,18 +51,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var tableBody = document.getElementById("info-table-body");
     var rows = tableBody.getElementsByTagName("tr");
 
-    // Function to filter table rows
     function filterTable() {
         var filter = searchInput.value.toLowerCase();
         var row, cells, cell, textValue;
-
-        // Loop through all table rows, and hide those who don't match the search query
         for (var i = 0; i < rows.length; i++) {
             row = rows[i];
             cells = row.getElementsByTagName("td");
             var found = false;
-
-            // Check if any cell in the row matches the search query
             for (var j = 0; j < cells.length; j++) {
                 cell = cells[j];
                 if (cell) {
@@ -73,8 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             }
-
-            // Show or hide the row based on the search result
             if (found) {
                 row.style.display = "";
             } else {
@@ -83,9 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Add event listeners for search input and button
     searchButton.addEventListener("click", filterTable);
-    searchInput.addEventListener("keyup", filterTable); // Enable real-time search as you type
+    searchInput.addEventListener("keyup", filterTable); // real-time search
 });
 
 
@@ -107,7 +99,7 @@ function closeEditModal() {
 }
 
 function openDeleteModal(button) {
-    var id = button.getAttribute('data-id'); // Mendapatkan nilai data-id dari tombol yang diklik
+    var id = button.getAttribute('data-id');
     document.getElementById('deleteId').value = id;
     document.getElementById("modalFormDelete").style.display = "block";
 }
@@ -173,7 +165,6 @@ document.getElementById("formDeleteBarang").addEventListener("submit", async fun
       if (response.ok) {
         window.location.reload();
       } else {
-        // Handle errors
         console.error('Error deleting item');
       }
 });

@@ -17,7 +17,6 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: white;
     color: #ffffff;
-    /* min-height: 3000px; */
 }
 
 
@@ -34,6 +33,12 @@ body {
     left: 0;
     right: 0;
     z-index: 9999;
+  }
+
+  .navbar img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 15px;
   }
 
   .navbar .navbar-logo {
@@ -93,7 +98,7 @@ body {
 }
 
 .tabelInventaris{
-    padding-top: 7rem;
+    padding-top: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,29 +191,29 @@ tbody tr:hover {
 
 .input-box i {
     left: 2.4rem;
-    font-size: 24px; /* Adjust the font size as desired */
+    font-size: 24px;
     color: #707070;
 }
 
 .input-box input {
     height: 100%;
-    flex: 1; /*Use remaining space in the container */
+    flex: 1;
     outline: none;
-    font-size: 18px; /* Adjust the font size as desired */
+    font-size: 18px;
     font-weight: 400;
     border: none;
-    padding: 0 120px 0 40px; /* Adjust the padding as desired */
+    padding: 0 120px 0 40px;
     background-color: whitesmoke;
     border-radius: 10px;
 }
 
 .input-box .button {
-    right: 10px; /* Adjust the right position as desired */
-    font-size: 16px; /* Adjust the font size as desired */
+    right: 10px;
+    font-size: 16px;
     font-weight: 400;
     color: #fff;
     border: none;
-    padding: 12px 30px; /* Adjust the padding as desired */
+    padding: 12px 30px;
     border-radius: 6px;
     background-color: var(--primary);
     cursor: pointer;
@@ -276,6 +281,13 @@ tbody tr:hover {
 
 .left p {
     font-size: 0.9rem;
+
+}
+
+.left-container img{
+    width: 10rem;
+    height: 13rem;
+    margin-bottom: 1rem;
 
 }
 
