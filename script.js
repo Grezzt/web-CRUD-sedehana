@@ -88,3 +88,63 @@ document.addEventListener("DOMContentLoaded", function () {
     searchInput.addEventListener("keyup", filterTable); // Enable real-time search as you type
 });
 
+
+function openTambahModal() {
+    document.getElementById("modalFormTambah").style.display = "block";
+  }
+
+function closeTambahModal() {
+    document.getElementById("modalFormTambah").style.display = "none";
+}
+
+function openEditModal(button) {
+    var id = button.getAttribute('data-id'); // Mendapatkan nilai data-id dari tombol yang diklik
+    document.getElementById('editId').value = id;
+    document.getElementById("modalFormEdit").style.display = "block";
+}
+function closeEditModal() {
+    document.getElementById("modalFormEdit").style.display = "none";
+}
+
+document.getElementById("formTambahBarang").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    const namaBarang = document.getElementById("namaBarang").value;
+    const quantityBarang = document.getElementById("quantityBarang").value;
+    const hargaBarang = document.getElementById("hargaBarang").value;
+
+    const response = await fetch('tambah_barang.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: `namaBarang=${namaBarang}&quantityBarang=${quantityBarang}&hargaBarang=${hargaBarang}`
+    });
+
+    if (response.ok) {
+      location.reload();
+    } else {
+      alert('Gagal menambah barang');
+    }
+});
+
+document.getElementById("formEditBarang").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const id = document.getElementById("editId").value;
+    const name = document.getElementById("editName").value;
+    const quantity = document.getElementById("editQuantity").value;
+    const price = document.getElementById("editPrice").value;
+    const response = await fetch('edit_barang.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: `id=${id}&name=${name}&quantity=${quantity}&price=${price}`
+    });
+
+    if (response.ok) {
+      location.reload();
+    } else {
+      alert('Gagal mengedit barang');
+    }
+});
