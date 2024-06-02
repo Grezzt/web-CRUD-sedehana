@@ -28,10 +28,6 @@ if (mysqli_num_rows($hasil) > 0) {
   <!--icons -->
   <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-
-  <!-- bootstrap -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
-
   <!-- style -->
   <link rel="stylesheet" href="style.css" />
   </head>
@@ -82,7 +78,7 @@ if (mysqli_num_rows($hasil) > 0) {
           echo '<td>' . $item['quantity'] . '</td>';
           echo '<td>' . $item['price'] . '</td>';
           echo '<td><button class="tombolEdit" id="editButton" data-id="' . $item['id'] . '" onclick="openEditModal(this)">Edit</button></td>';
-          echo '<td><button class="tombolHapus" id="hapusButton" data-id="' . $item['id'] . '">Hapus</button></td>';
+          echo '<td><button class="tombolHapus" id="hapusButton" data-id="' . $item['id'] . '" onclick="openDeleteModal(this)">Hapus</button></td>';
           echo '</tr>';
         }
       ?>
@@ -123,6 +119,20 @@ if (mysqli_num_rows($hasil) > 0) {
             <label for="editPrice">Price:</label>
             <input type="text" id="editPrice" name="price"><br><br>
             <button type="submit">Simpan Perubahan</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- modal hapus item -->
+    <div id="modalFormDelete" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeDeleteModal()">&times;</span>
+        <h2>Konfirmasi Hapus</h2>
+        <h4>Apakah anda yakin untuk menghapus barang</h4>
+        <form id="formDeleteBarang" method="POST">
+            <input type="hidden" id="deleteId" name="id">
+            <button type="submit" >Hapus</button>
+            <button type="button" onclick="closeDeleteModal()">Urungkan</button>
         </form>
       </div>
     </div>

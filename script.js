@@ -106,6 +106,15 @@ function closeEditModal() {
     document.getElementById("modalFormEdit").style.display = "none";
 }
 
+function openDeleteModal(button) {
+    var id = button.getAttribute('data-id'); // Mendapatkan nilai data-id dari tombol yang diklik
+    document.getElementById('deleteId').value = id;
+    document.getElementById("modalFormDelete").style.display = "block";
+}
+function closeDeleteModal() {
+    document.getElementById("modalFormDelete").style.display = "none";
+}
+
 document.getElementById("formTambahBarang").addEventListener("submit", async function(event) {
     event.preventDefault();
     const namaBarang = document.getElementById("namaBarang").value;
@@ -147,4 +156,24 @@ document.getElementById("formEditBarang").addEventListener("submit", async funct
     } else {
       alert('Gagal mengedit barang');
     }
+});
+
+document.getElementById("formDeleteBarang").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const id = document.getElementById("deleteId").value;
+    const response = await fetch('delete.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `id=${id}`
+      });
+
+      if (response.ok) {
+        window.location.reload();
+      } else {
+        // Handle errors
+        console.error('Error deleting item');
+      }
 });
