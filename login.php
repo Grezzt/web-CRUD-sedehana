@@ -21,7 +21,6 @@
   <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <a href="index.php"><img src="asset/images.png" alt=""></a>
     <a href="index.php" class="navbar-logo">Skill Test.<span>Ristek</span></a>
     <!-- tengah -->
     <div class="navbar-nav">
@@ -38,8 +37,7 @@
      <div class="card-container">
      <div class="left">
         <div class="left-container">
-          <img src="asset/LogoRistek.jpg" alt="">
-          <h2>Login Form</h2>
+            <h2>Login Form</h2>
           <p>Login Sebagai Admin.</p><br>
         </div>
        </div>

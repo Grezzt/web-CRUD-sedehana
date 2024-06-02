@@ -35,7 +35,6 @@ if (mysqli_num_rows($hasil) > 0) {
   <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <a href="index.php"><img src="asset/images.png" alt=""></a>
     <a href="index.php" class="navbar-logo">Skill Test.<span>Ristek</span></a>
     <!-- tengah -->
     <div class="navbar-nav">

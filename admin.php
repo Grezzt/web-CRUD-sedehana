@@ -40,7 +40,6 @@ if (mysqli_num_rows($hasil) > 0) {
   <body>
   <!-- Navbar -->
   <nav class="navbar">
-  <a href="#home"><img src="asset/images.png" alt=""></a>
     <a href="#home" class="navbar-logo">Skill Test.<span>Ristek</span></a>
     <!-- tengah -->
     <div class="navbar-nav">
